@@ -1,7 +1,7 @@
 {
   "index": "/index.html",
   "assetGroups": [{
-    "name": "angular-skeleton-app",
+    "name": "bottle-rocket-test",
     "installMode": "prefetch",
     "resources": {
       "files": [

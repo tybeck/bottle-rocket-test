@@ -1,0 +1,27 @@
+<div class="detail-area" [@openClose]="showDetailedArea ? 'opened' : 'closed'">
+	<div #map=""></div>
+	<section class="details" *ngIf="selectedRestaurant">
+		<div class="header">
+			<h2>{{selectedRestaurant.name}}</h2>
+			<h3>{{selectedRestaurant.category}}</h3>
+		</div>
+		<div class="primary">
+			<p class="address">
+				<span class="street">{{selectedRestaurant.location.address}}</span>
+			</p>
+			<p class="address city-state-zip">
+				<span class="city">{{selectedRestaurant.location.city}}</span>,
+				<span class="state">{{selectedRestaurant.location.state}}</span>
+				<span class="postal-code">{{selectedRestaurant.location.postalCode}}</span>
+			</p>
+			<div class="contact-info" *ngIf="selectedRestaurant.contact">
+				<a [href]="'tel:' + selectedRestaurant.contact.phone" class="phone-number" *ngIf="selectedRestaurant.contact.formattedPhone">
+					{{selectedRestaurant.contact.formattedPhone}}
+				</a>
+				<a [href]="'https://twitter.com/' + selectedRestaurant.contact.twitter" *ngIf="selectedRestaurant.contact.twitter">
+					@{{selectedRestaurant.contact.twitter}}
+				</a>
+			</div>
+		</div>
+	</section>
+</div>

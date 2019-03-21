@@ -1,0 +1,56 @@
+@import ~bootstrap/scss/functions
+@import ~bootstrap/scss/variables
+@import ~bootstrap/scss/mixins/breakpoints
+
+div.list-item
+	position: relative
+	height: 180px
+	background-position: center center
+	background-size: cover
+	cursor: pointer
+
+	@include media-breakpoint-up(md)
+		margin: 10px 7.5px 0 7.5px
+
+	@include media-breakpoint-up(xl)
+		height: 360px
+
+	&:after
+		
+		position: absolute
+		display: block
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		transition: all 300ms ease
+		background: -moz-linear-gradient(top, rgba(30,87,153,0) 35%, rgba(0,0,0,0.70) 100%)
+		background: -webkit-linear-gradient(top, rgba(30,87,153,0) 35%,rgba(0,0,0,0.70) 100%)
+		background: linear-gradient(to bottom, rgba(30,87,153,0) 35%,rgba(0,0,0,0.70) 100%)
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#001e5799', endColorstr='#8c000000',GradientType=0)
+		pointer-events: none
+		content: ""
+		opacity: .80
+
+	&:hover
+
+		&:after
+
+			opacity: 1
+
+	div.info
+
+		position: absolute
+		margin-left: 12px
+		bottom: 6px
+		z-index: 1
+
+		h2
+
+			margin: 0 0 6px 0
+			padding: 0
+
+		h3
+
+			margin: 0
+			padding: 0

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-skeleton-app": {
+    "bottle-rocket-test": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -27,7 +27,7 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/main.sass"
             ],
             "scripts": []
           },
@@ -55,40 +55,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-skeleton-app:build"
+            "browserTarget": "bottle-rocket-test:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-skeleton-app:build:production"
+              "browserTarget": "bottle-rocket-test:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-skeleton-app:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "karmaConfig": "./karma.conf.js",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "scripts": [],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "src/assets/styles"
-              ]
-            },
-            "assets": [
-              "src/assets",
-              "src/favicon.ico"
-            ]
+            "browserTarget": "bottle-rocket-test:build"
           }
         },
         "lint": {
@@ -112,34 +90,9 @@
           }
         }
       }
-    },
-    "angular-skeleton-app-e2e": {
-      "root": "",
-      "sourceRoot": "",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "angular-skeleton-app:serve"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
     }
   },
-  "defaultProject": "angular-skeleton-app",
+  "defaultProject": "bottle-rocket-test",
   "schematics": {
     "@schematics/angular:component": {
       "spec": false,

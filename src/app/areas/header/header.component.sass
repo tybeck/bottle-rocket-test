@@ -1,0 +1,40 @@
+@import variables
+
+header
+
+	color: $mainTextColor
+	background: $mainBgColor
+	text-align: center
+	height: 75px
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 2
+
+	> .back-button
+
+		position: absolute
+		bottom: 9px
+		left: 15px
+		font-size: 26px
+		pointer-events: all
+	
+	&:after
+
+		content: ""
+		display: block
+		position: absolute
+		height: 35px
+		background: url('assets/imgs/icon_map@2x.png') no-repeat center center
+		background-size: cover
+		width: 35px
+		bottom: 10px
+		pointer-events: none
+		right: 10px
+
+	h1
+
+		width: 100%
+		position: absolute
+		bottom: 10px

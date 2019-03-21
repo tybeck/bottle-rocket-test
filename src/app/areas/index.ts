@@ -1,17 +1,21 @@
 import { Routes } from "@angular/router";
 
-import { NavComponent } from "./nav/nav.component";
-import { HomeComponent } from "./home/home.component";
-import { ErrorComponent } from "./error/error.component";
-import { NotFoundComponent } from "./not-found/not-found.component";
-import { ProjectsComponent } from "./projects/projects.component";
-import { ProjectComponent } from "./projects/project.component";
+import { ListComponent } from "./list/list.component";
+import { ListItemComponent } from "./list-item/list-item.component";
+import { DetailComponent } from "./detail/detail.component";
+import { HeaderComponent } from "./header/header.component";
 
-export const AREAS_ROUTES: Routes = [
-	{ path: "", component: HomeComponent, pathMatch: "full" },
-	{ path: "projects", component: ProjectsComponent },
-	{ path: "error", component: ErrorComponent },
-	{ path: "**", component: NotFoundComponent },
+import { ListRestaurantsResolve } from "../services/resolves/list-restaurants.resolve";
+
+export const ComponentRoutes: Routes = [
+	{
+		path: "",
+		component: ListComponent,
+		pathMatch: "full",
+		resolve: {
+			restaurants: ListRestaurantsResolve
+		}
+	}
 ];
 
-export const AREAS_COMPONENTS = [HomeComponent, ProjectsComponent, ProjectComponent, NavComponent, ErrorComponent, NotFoundComponent];
+export const Components = [ListComponent, ListItemComponent, DetailComponent, HeaderComponent];
